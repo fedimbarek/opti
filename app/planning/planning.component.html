@@ -1,0 +1,1012 @@
+<!-- <ejs-schedule width="900" height="500"></ejs-schedule> -->
+<!--<main class="main-content position-relative border-radius-lg ">
+<div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <div class="d-flex align-items-center" >
+              <h6 class="mb-0 mr-auto">Authors table</h6>
+              <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                <div class="input-group">
+                  <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                </div>
+              </div>
+              <button type="button" class="btn btn-linkedin btn-icon mt-2" style=" margin-left: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                <span class="btn-inner--icon"><i class="fa fa-plus "></i></span>&nbsp;
+                <span class="btn-inner--text">Ajouter</span>
+            </button>
+               </div>
+               <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau Destination</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="mt-2">
+                                <label for="adresse" class="form-label"><i class="ni ni-building"></i> nom_dagent</label>
+                                <input type="text" class="form-control" id="adresse" name="adresse" [(ngModel)]="userPlannig.nom_dagent">
+                            </div>
+                            <div class="mt-2">
+                                <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn bg-gradient-primary btn-tooltip" (click)="ajouter()" data-bs-dismiss="modal">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-0">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Etat</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                    <th class="text-secondary opacity-7"></th>
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                      <div class="input-group">
+                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                      </div>
+                    </div>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let agent of user | filter:searchText">
+                    <td >
+                      <div class="d-flex px-2 py-1">
+                        <div>-->
+                          <!-- <img src="{{agent.picture || 'https://images.pexels.com/photos/20230203/pexels-photo-20230203/free-photo-of-bois-sale-retro-vintage.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}}"> -->
+                       <!-- <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">{{ agent.nom_dagent?.nom }}</h6>
+                          <p class="text-xs text-secondary mb-0">{{agent.date}}</p>
+                        </div>
+                      </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-xs font-weight-bold mb-0">Manager</p>
+                      <p class="text-xs text-secondary mb-0">{{agent.role}}</p>
+                    </td>-->
+                    <!-- <td class="align-middle text-center text-sm"> -->
+                      <!-- <div *ngIf="agent.etat_active === 'Active'; then Active; else Inactive"></div> -->
+                      <!-- <ng-template #Active> -->
+                        <!-- <span class="badge badge-sm bg-gradient-success">Online</span> -->
+                      <!-- </ng-template> -->
+                      <!-- <ng-template #Inactive> -->
+                        <!-- <span class="badge badge-sm bg-gradient-secondary">Offline</span> -->
+                      <!-- </ng-template> -->
+                    <!-- </td> -->
+                    <!-- <td class="align-middle text-center"> -->
+                      <!-- <span class="text-secondary text-xs font-weight-bold">23/04/18</span> -->
+                      <!--  -->
+                    <!-- </td> -->
+              <!--     <td><a [routerLink]="['/planning/'+agent._id]">View Details</a></td>
+                    <td class="align-middle">
+                      <a class="text-secondary font-weight-bold text-xs"  data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="showDetail(agent)">
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                </tbody></table></div></div></div></div></div></div></main>
+
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <app-detail-plannig [agent]="selectedAgent"></app-detail-plannig>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>-->
+<!-- <ejs-schedule width="900" height="500"></ejs-schedule> -->
+<!--<main class="main-content position-relative border-radius-lg ">
+  <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <div class="d-flex align-items-center" >
+                <h6 class="mb-0 mr-auto">Authors table</h6>
+                <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                  <div class="input-group">
+                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                  </div>
+                </div>
+                <button type="button" class="btn btn-linkedin btn-icon mt-2" style=" margin-left: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                  <span class="btn-inner--icon"><i class="fa fa-plus "></i></span>&nbsp;
+                  <span class="btn-inner--text">Ajouter</span>
+              </button>
+                 </div>
+
+
+
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Etat</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                      <th class="text-secondary opacity-7"></th>
+                      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+
+                      </div>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let agent of user | filter:searchText">
+                      <td >
+                        <div class="d-flex px-2 py-1">
+                          <div>-->
+                            <!-- <img src="{{agent.picture || 'https://images.pexels.com/photos/20230203/pexels-photo-20230203/free-photo-of-bois-sale-retro-vintage.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}}"> -->
+                       <!--  <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{ agent.nom_dagent?.nom }}</h6>
+                            <p class="text-xs text-secondary mb-0">{{ formatDate(agent.date) }}</p>
+                          </div>
+                        </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">Agent</p>
+                        <p class="text-xs text-secondary mb-0">{{agent.title?.title}}</p>
+                      </td>-->
+                      <!-- <td class="align-middle text-center text-sm"> -->
+                        <!-- <div *ngIf="agent.etat_active === 'Active'; then Active; else Inactive"></div> -->
+                        <!-- <ng-template #Active> -->
+                          <!-- <span class="badge badge-sm bg-gradient-success">Online</span> -->
+                        <!-- </ng-template> -->
+                        <!-- <ng-template #Inactive> -->
+                          <!-- <span class="badge badge-sm bg-gradient-secondary">Offline</span> -->
+                        <!-- </ng-template> -->
+                      <!-- </td> -->
+                      <!-- <td class="align-middle text-center"> -->
+                        <!-- <span class="text-secondary text-xs font-weight-bold">23/04/18</span> -->
+                        <!--  -->
+                      <!-- </td> -->
+                      <!-- <td><a [routerLink]="['/planning/'+agent._id]">View Details</a></td> -->
+                 <!--     <td>
+                        <p class="text-xs font-weight-bold mb-0">{{agent.title?.title}}</p>
+                        <p class="text-xs text-secondary mb-0">{{agent.title?.description}}</p>
+                      </td>
+                      <td class="align-middle">
+                        <a class="text-secondary font-weight-bold text-xs"  data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="showDetail(agent)">
+                          details
+                        </a>
+                        <a class="text-secondary font-weight-bold text-xs"  data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#exampleModal9" (click)="modifierid(agent)">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody></table></div></div></div></div></div></div></main>
+
+                  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <app-detail-plannig [agent]="selectedAgent"></app-detail-plannig>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>-->
+
+
+
+
+
+
+
+
+
+
+                 <!--  <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau Destination</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+
+                                  <div class="mt-2">
+                                    <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> Agent Name</label>
+                                    <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.nom_dagent">
+                                     -->    <!-- Dynamically generate options for agents -->
+                                    <!---    <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+
+                                    </select>
+                                  </div>
+                                  <div class="mt-2">
+                                      <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                      <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                                  </div>     -->
+                                  <!-- <button (click)="toggleInput()">Afficher Input</button> -->
+                                  <!-- <div *ngIf="showInput"> -->
+                                    <!-- <input type="text" id="textInput"> -->
+                                    <!-- <input type="text" id="textInput"> -->
+                                    <!-- <input type="text" id="textInput"> -->
+<!--                                      -->
+                                  <!-- </div> -->
+                                 <!-- <select [(ngModel)]="selectedOption">
+                                    <option value="1">Afficher Input 1</option>
+                                    <option value="2">Afficher Input 2</option>
+                                    <option value="3">Afficher Input 3</option>
+                                  </select>
+
+                                  <div *ngIf="selectedOption === '1'">
+                                    <div class="mt-2">
+                                      <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> Destination</label>
+                                      <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.nom_dagent">
+                                      -->  <!-- Dynamically generate options for agents -->
+                                        <!---  <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+                                  <div *ngIf="selectedOption === '2'">
+                                    <input type="text" id="textInput2">
+                                    <input type="text" id="textInput2">
+
+                                  </div>
+                                  <div *ngIf="selectedOption === '3'">
+                                    <input type="text" id="textInput2">
+                                    <input type="text" id="textInput2">
+                                    <input type="text" id="textInput2">
+
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn bg-gradient-primary btn-tooltip"  data-bs-toggle="modal" data-bs-target="#exampleModal9" data-bs-dismiss="modal" (click)="ajouter()">Detail changes</button>
+                              </div>
+                          </div>
+                      </div>
+                    </div>-->
+  <!-- code yekhdem loutany -->
+                    <!--<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau Destination</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+
+                                  <div class="mt-2">
+                                    <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> Agent Name</label>
+                                    <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.nom_dagent">
+                                    -->  <!-- Dynamically generate options for agents -->
+                                    <!--    <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+
+                                    </select>
+                                  </div>
+                                  <div class="mt-2">
+                                      <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                      <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                                  </div>
+
+                                  <div class="row g-2">
+                                    <div class="col-md">
+                                      <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> destination</label>
+                                      <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.title">
+                                      -->    <!-- Dynamically generate options for agents -->
+                                        <!-- <option *ngFor="let destination of Destination" [value]="destination.title">{{destination.title }} {{destination.description }}</option>
+
+                                      </select>
+                                    </div>
+                                    <div class="col-md">
+                                        <label for="prenom" class="form-label"><i class='bx bx-user fa-lg'></i> Tache</label>
+                                        <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="userPlannig.tache">
+                                    </div>
+                                    <div class="col-2">
+                                      <label for="prenom" class="form-label"><i class='bx bx-user fa-lg'></i> plus</label>
+                                        <button (click)="toggleInput()" class="btn btn-primary"  id="prenom" name="prenom"><span class="btn-inner--icon"><i class="fab fa-facebook"></i></span></button>
+                                    </div>
+
+                                    <div *ngIf="showInput">
+                                      <div class="row g-2">
+                                          <div class="col-md">
+
+                                            <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.title">
+                                           -->    <!-- Dynamically generate options for agents -->
+                                            <!--  <option *ngFor="let destination of Destination" [value]="destination.title">{{destination.title }}</option>
+
+                                          </select>
+                                          </div>
+                                          <div class="col-md">
+                                            <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="userPlannig.tache">
+                                        </div>
+
+                                          <div class="col-1">
+                                              <button (click)="toggleInput2()" class="btn btn-primary" class="form-control" id="prenom" name="prenom" style="background-color: #5E72E4;"><span class="btn-inner--icon"><i class="fab fa-facebook"></i></span></button>
+                                          </div>
+                                          <div class="col-1">
+                                            <button (click)="toggleInput()" class="btn btn-danger" class="form-control" id="prenom" name="prenom" style="background-color: #F5365C;"><span class="btn-inner--icon"><i class="fab fa-facebook"></i></span></button>
+                                        </div>
+                                      </div>
+                                  </div>
+
+                                  <div *ngIf="showInput2">
+                                    <div class="row g-2">
+                                        <div class="col-md">
+
+                                          <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.title">
+                                          -->   <!-- Dynamically generate options for agents -->
+                                         <!--   <option *ngFor="let destination of Destination" [value]="destination.title">{{destination.title }}</option>
+
+                                        </select>
+                                      </div>
+                                        <div class="col-md">
+                                            <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="userPlannig.tache">
+                                        </div>
+                                        <div class="col-1">
+                                            <button (click)="toggleInput3()" class="btn btn-primary" class="form-control" id="prenom" name="prenom" style="background-color: #5E72E4;"><span class="btn-inner--icon"><i class="fab fa-facebook"></i></span></button>
+                                        </div>
+                                        <div class="col-1">
+                                          <button (click)="toggleInput2()" class="btn btn-danger" class="form-control" id="prenom" name="prenom" style="background-color: #F5365C;"><span class="btn-inner--icon"><i class="fab fa-facebook"></i></span></button>
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="showInput3">
+                                  <div class="row g-2">
+                                      <div class="col-md">
+                                        <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.title">
+                                        -->  <!-- Dynamically generate options for agents -->
+                                        <!--  <option *ngFor="let destination of Destination" [value]="destination.title">{{destination.title }}</option>
+
+                                      </select>
+                                      </div>
+                                      <div class="col-md">
+                                          <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="userPlannig.tache">
+                                      </div>
+                                      <div class="col-1">
+                                          <button (click)="toggleInput4()" class="btn btn-primary" class="form-control" id="prenom" name="prenom" style="background-color: #5E72E4;"><span class="btn-inner--icon"><i class="fab fa-facebook"></i></span></button>
+                                      </div>
+                                      <div class="col-1">
+                                        <button (click)="toggleInput3()" class="btn btn-danger" class="form-control" id="prenom" name="prenom" style="background-color: #F5365C;"><span class="btn-inner--icon"><i class="fab fa-facebook"></i></span></button>
+                                    </div>
+                                  </div>
+                              </div>
+
+
+
+
+                                </div>
+
+
+
+
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn bg-gradient-primary btn-tooltip"  data-bs-toggle="modal" data-bs-target="#exampleModal5" data-bs-dismiss="modal" (click)="modifierid(Agent)" (click)="ajouter()">Detail changes</button>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau Destination</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+
+                                  <div class="mt-2">
+                                    <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> Agent Name</label>
+                                    <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.nom_dagent">
+                                    -->  <!-- Dynamically generate options for agents -->
+                                     <!--   <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+
+                                    </select>
+                                  </div>
+                                  <div class="mt-2">
+                                      <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                      <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                                  </div>
+                                  <div class="mt-2">
+                                    <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                    <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                                </div>
+                                <div class="mt-2">
+                                  <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                  <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                              </div>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn bg-gradient-primary btn-tooltip" (click)="ajouter()" data-bs-dismiss="modal">Detail changes</button>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="modal fade" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Plannig</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="mt-2">
+
+                                <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="modifPlannig.nom_dagent">
+                                -->  <!-- Dynamically generate options for agents -->
+                               <!--  <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+                              </select>
+                            -->     <!-- <label for="nom" class="form-label"><i class='bx bxs-user fa-lg'></i> Nom_agent</label> -->
+                                  <!-- <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="modifPlannig.nom_dagent"> -->
+                              <!-- </div> -->
+                              <!-- <div class="col-md"> -->
+                                  <!-- <label for="prenom" class="form-label"><i class='bx bx-user fa-lg'></i> Prenom_agent</label> -->
+                                  <!-- <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="modifPlannig.date"> -->
+                              <!-- </div> -->
+                              <!-- <div class="mt-2"> -->
+                                <!-- <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label> -->
+                                <!-- <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="modifPlannig.date"> -->
+                            <!-- </div>         -->
+<!--                              -->
+                          <!-- </div> -->
+                          <!-- <div class="modal-footer"> -->
+                            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary" (click)="modif(modifPlannig.id)">Edit Plannig</button> -->
+                          <!-- </div> -->
+                        <!-- </div> -->
+                      <!-- </div> -->
+                    <!-- </div> -->
+
+                    <!-- <ejs-schedule width="900" height="500"></ejs-schedule> -->
+<!--<main class="main-content position-relative border-radius-lg ">
+<div class="container-fluid py-4">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mb-4">
+          <div class="card-header pb-0">
+            <div class="d-flex align-items-center" >
+              <h6 class="mb-0 mr-auto">Authors table</h6>
+              <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                <div class="input-group">
+                  <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                </div>
+              </div>
+              <button type="button" class="btn btn-linkedin btn-icon mt-2" style=" margin-left: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                <span class="btn-inner--icon"><i class="fa fa-plus "></i></span>&nbsp;
+                <span class="btn-inner--text">Ajouter</span>
+            </button>
+               </div>
+               <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau Destination</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="mt-2">
+                                <label for="adresse" class="form-label"><i class="ni ni-building"></i> nom_dagent</label>
+                                <input type="text" class="form-control" id="adresse" name="adresse" [(ngModel)]="userPlannig.nom_dagent">
+                            </div>
+                            <div class="mt-2">
+                                <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn bg-gradient-primary btn-tooltip" (click)="ajouter()" data-bs-dismiss="modal">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="card-body px-0 pt-0 pb-2">
+            <div class="table-responsive p-0">
+              <table class="table align-items-center mb-0">
+                <thead>
+                  <tr>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Etat</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                    <th class="text-secondary opacity-7"></th>
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                      <div class="input-group">
+                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                      </div>
+                    </div>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let agent of user | filter:searchText">
+                    <td >
+                      <div class="d-flex px-2 py-1">
+                        <div>-->
+                          <!-- <img src="{{agent.picture || 'https://images.pexels.com/photos/20230203/pexels-photo-20230203/free-photo-of-bois-sale-retro-vintage.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}}"> -->
+                       <!-- <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">{{ agent.nom_dagent?.nom }}</h6>
+                          <p class="text-xs text-secondary mb-0">{{agent.date}}</p>
+                        </div>
+                      </div>
+                      </div>
+                    </td>
+                    <td>
+                      <p class="text-xs font-weight-bold mb-0">Manager</p>
+                      <p class="text-xs text-secondary mb-0">{{agent.role}}</p>
+                    </td>-->
+                    <!-- <td class="align-middle text-center text-sm"> -->
+                      <!-- <div *ngIf="agent.etat_active === 'Active'; then Active; else Inactive"></div> -->
+                      <!-- <ng-template #Active> -->
+                        <!-- <span class="badge badge-sm bg-gradient-success">Online</span> -->
+                      <!-- </ng-template> -->
+                      <!-- <ng-template #Inactive> -->
+                        <!-- <span class="badge badge-sm bg-gradient-secondary">Offline</span> -->
+                      <!-- </ng-template> -->
+                    <!-- </td> -->
+                    <!-- <td class="align-middle text-center"> -->
+                      <!-- <span class="text-secondary text-xs font-weight-bold">23/04/18</span> -->
+                      <!--  -->
+                    <!-- </td> -->
+              <!--     <td><a [routerLink]="['/planning/'+agent._id]">View Details</a></td>
+                    <td class="align-middle">
+                      <a class="text-secondary font-weight-bold text-xs"  data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="showDetail(agent)">
+                        Edit
+                      </a>
+                    </td>
+                  </tr>
+                </tbody></table></div></div></div></div></div></div></main>
+
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <app-detail-plannig [agent]="selectedAgent"></app-detail-plannig>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>-->
+<!-- <ejs-schedule width="900" height="500"></ejs-schedule> -->
+<main class="main-content position-relative border-radius-lg ">
+  <app-navbar></app-navbar>
+  <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0" style="background-color:rgb(235, 235, 235);">
+              <div class="d-flex align-items-center" >
+                <h6 class="mb-0 mr-auto">Authors table</h6>
+                <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                  <div class="input-group">
+                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                  </div>
+                </div>
+                <button type="button" class="btn btn-linkedin btn-icon mt-2" style=" margin-left: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                  <span class="btn-inner--icon"><i class="fa fa-plus "></i></span>&nbsp;
+                  <span class="btn-inner--text">Ajouter</span>
+              </button>
+                 </div>
+
+
+
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom-Agent</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Destination</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tache</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 20px;"></th>
+                      <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+
+                      </div>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let agent of user | filter:searchText">
+                      <td >
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="{{agent.picture || '../assets/img/team-2.jpg'}}" class="avatar avatar-sm me-3" alt="user1">                        </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{ agent.nom_dagent?.nom }}</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+
+
+                        <p class="text-xs text-secondary mb-0">{{ formatDate(agent.date) }}</p>
+                      </td>
+                      <!-- <td class="align-middle text-center text-sm"> -->
+                        <!-- <div *ngIf="agent.etat_active === 'Active'; then Active; else Inactive"></div> -->
+                        <!-- <ng-template #Active> -->
+                          <!-- <span class="badge badge-sm bg-gradient-success">Online</span> -->
+                        <!-- </ng-template> -->
+                        <!-- <ng-template #Inactive> -->
+                          <!-- <span class="badge badge-sm bg-gradient-secondary">Offline</span> -->
+                        <!-- </ng-template> -->
+                      <!-- </td> -->
+                      <!-- <td class="align-middle text-center"> -->
+                        <!-- <span class="text-secondary text-xs font-weight-bold">23/04/18</span> -->
+                        <!--  -->
+                      <!-- </td> -->
+                      <!-- <td><a [routerLink]="['/planning/'+agent._id]">View Details</a></td> -->
+
+                      <td>
+
+                        <p class="text-xs text-secondary mb-0" style="margin-left: 20px;">{{agent.title?.title}} {{agent.title?.description}}</p>
+
+                      </td>
+
+                      <td>
+                        <p class="text-xs text-secondary mb-0" style="margin-left: 20px;">{{agent.Tache}}</p>
+                      </td>
+
+
+                      <td class="align-middle">
+                        <button class="btn btn-info btn-sm text-xs" style="position: relative; margin: 10px;" data-original-title="View details" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="showDetail(agent)">
+                          <i class="fas fa-info-circle"></i> Details
+                        </button>
+
+                        <button class="btn btn-warning btn-sm font-weight-bold" style="position: relative; margin: 10px;" data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#exampleModal9" (click)="modifierid(agent)">
+                          <i class="fas fa-edit"></i> Edit
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody></table></div></div></div></div></div></div></main>
+
+                  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <app-detail-plannig [agent]="selectedAgent"></app-detail-plannig>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                 <!--  <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau Destination</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+
+                                  <div class="mt-2">
+                                    <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> Agent Name</label>
+                                    <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.nom_dagent">
+                                     -->    <!-- Dynamically generate options for agents -->
+                                    <!---    <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+
+                                    </select>
+                                  </div>
+                                  <div class="mt-2">
+                                      <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                      <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                                  </div>     -->
+                                  <!-- <button (click)="toggleInput()">Afficher Input</button> -->
+                                  <!-- <div *ngIf="showInput"> -->
+                                    <!-- <input type="text" id="textInput"> -->
+                                    <!-- <input type="text" id="textInput"> -->
+                                    <!-- <input type="text" id="textInput"> -->
+<!--                                      -->
+                                  <!-- </div> -->
+                                 <!-- <select [(ngModel)]="selectedOption">
+                                    <option value="1">Afficher Input 1</option>
+                                    <option value="2">Afficher Input 2</option>
+                                    <option value="3">Afficher Input 3</option>
+                                  </select>
+
+                                  <div *ngIf="selectedOption === '1'">
+                                    <div class="mt-2">
+                                      <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> Destination</label>
+                                      <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.nom_dagent">
+                                      -->  <!-- Dynamically generate options for agents -->
+                                        <!---  <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+                                      </select>
+                                    </div>
+                                  </div>
+
+                                  <div *ngIf="selectedOption === '2'">
+                                    <input type="text" id="textInput2">
+                                    <input type="text" id="textInput2">
+
+                                  </div>
+                                  <div *ngIf="selectedOption === '3'">
+                                    <input type="text" id="textInput2">
+                                    <input type="text" id="textInput2">
+                                    <input type="text" id="textInput2">
+
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn bg-gradient-primary btn-tooltip"  data-bs-toggle="modal" data-bs-target="#exampleModal9" data-bs-dismiss="modal" (click)="ajouter()">Detail changes</button>
+                              </div>
+                          </div>
+                      </div>
+                    </div>-->
+
+                    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau Plannig</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+
+                                  <div class="mt-2">
+                                    <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> Agent Name</label>
+                                    <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.nom_dagent">
+                                        <!-- Dynamically generate options for agents -->
+                                        <option value="" selected disabled>Select an option</option>
+                                        <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+
+                                    </select>
+                                  </div>
+                                  <div class="mt-2">
+                                      <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                      <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                                  </div>
+
+                                  <div class="row g-2 mt-2">
+                                    <div class="col-md">
+                                      <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> destination</label>
+                                      <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.title">
+                                          <!-- Dynamically generate options for agents -->
+                                          <option value="" selected disabled>Select an destination</option>
+                                          <option *ngFor="let destination of Destination" [value]="destination.title">{{destination.title }} {{destination.description }}</option>
+
+                                      </select>
+                                    </div>
+                                    <div class="col-md">
+                                        <label for="prenom" class="form-label"><i class='bx bx-user fa-lg'></i> Tache</label>
+                                        <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="userPlannig.Tache">
+                                    </div>
+                                    <div class="col-2">
+                                      <label for="prenom" class="form-label"><i class='bx bx-user fa-lg'></i> plus</label>
+                                        <button (click)="toggleInput()" class="btn btn-primary"  id="prenom" name="prenom"><span class="btn-inner--icon"><i class="fas fa-plus icon"></i></span></button>
+                                    </div>
+
+                                    <div *ngIf="showInput">
+                                      <div class="row g-2">
+                                          <div class="col-md">
+
+                                            <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.title">
+                                              <!-- Dynamically generate options for agents -->
+                                              <option value="" selected disabled>Select an destination</option>
+                                              <option *ngFor="let destination of Destination" [value]="destination.title">{{destination.title }}</option>
+
+                                          </select>
+                                          </div>
+                                          <div class="col-md">
+                                            <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="userPlannig.Tache">
+                                        </div>
+
+                                          <div class="col-1">
+                                              <button (click)="toggleInput2()" class="btn btn-primary" class="form-control" id="prenom" name="prenom" style="background-color: #5E72E4;"><span class="btn-inner--icon"><i class="fas fa-plus icon"></i></span></button>
+                                          </div>
+                                          <div class="col-1">
+                                            <button (click)="toggleInput()" class="btn btn-danger" class="form-control" id="prenom" name="prenom" style="background-color: #F5365C;"><span class="btn-inner--icon"><i class="fas fa-trash-alt icon"></i></span></button>
+                                        </div>
+                                      </div>
+                                  </div>
+
+                                  <div *ngIf="showInput2">
+                                    <div class="row g-2">
+                                        <div class="col-md">
+
+                                          <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.title">
+                                            <!-- Dynamically generate options for agents -->
+                                            <option value="" selected disabled>Select an destination
+                                            <option *ngFor="let destination of Destination" [value]="destination.title">{{destination.title }}</option>
+
+                                        </select>
+                                      </div>
+                                        <div class="col-md">
+                                            <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="userPlannig.Tache">
+                                        </div>
+                                        <div class="col-1">
+                                            <button (click)="toggleInput3()" class="btn btn-primary" class="form-control" id="prenom" name="prenom" style="background-color: #5E72E4;"><span class="btn-inner--icon"><i class="fas fa-plus icon"></i></span></button>
+                                        </div>
+                                        <div class="col-1">
+                                          <button (click)="toggleInput2()" class="btn btn-danger" class="form-control" id="prenom" name="prenom" style="background-color: #F5365C;"><span class="btn-inner--icon"><i class="fas fa-trash-alt icon"></i></span></button>
+                                      </div>
+                                    </div>
+                                </div>
+
+                                <div *ngIf="showInput3">
+                                  <div class="row g-2">
+                                      <div class="col-md">
+                                        <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.title">
+                                          <!-- Dynamically generate options for agents -->
+                                          <option value="" selected disabled>Select an destination</option>
+                                          <option *ngFor="let destination of Destination" [value]="destination.title">{{destination.title }}</option>
+
+                                      </select>
+                                      </div>
+                                      <div class="col-md">
+                                          <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="userPlannig.Tache">
+                                      </div>
+                                      <div class="col-1">
+                                          <button (click)="toggleInput4()" class="btn btn-primary" class="form-control" id="prenom" name="prenom" style="background-color: #5E72E4;"><span class="btn-inner--icon"><i class="fas fa-plus icon"></i></span></button>
+                                      </div>
+                                      <div class="col-1">
+                                        <button (click)="toggleInput3()" class="btn btn-danger" class="form-control" id="prenom" name="prenom" style="background-color: #F5365C;"><span class="btn-inner--icon"><i class="fas fa-trash-alt icon"></i></span></button>
+                                    </div>
+                                  </div>
+                              </div>
+
+
+
+
+                                </div>
+
+
+
+
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn bg-gradient-primary btn-tooltip"  data-bs-toggle="modal"  data-bs-dismiss="modal" (click)="modifierid(Agent)" (click)="ajouter()">Detail changes</button>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                          <div class="modal-content">
+                              <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">Nouveau Destination</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+
+                                  <div class="mt-2">
+                                    <label for="nom_dagent" class="form-label"><i class="ni ni-building"></i> Agent Name</label>
+                                    <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="userPlannig.nom_dagent">
+                                        <!-- Dynamically generate options for agents -->
+                                        <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+
+                                    </select>
+                                  </div>
+                                  <div class="mt-2">
+                                      <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                      <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                                  </div>
+                                  <div class="mt-2">
+                                    <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                    <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                                </div>
+                                <div class="mt-2">
+                                  <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                  <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="userPlannig.date">
+                              </div>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                                  <button type="button" class="btn bg-gradient-primary btn-tooltip" (click)="ajouter()" data-bs-dismiss="modal">Detail changes</button>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="modal fade" id="exampleModal9" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Plannig</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="mt-2">
+
+                                <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="modifPlannig.nom_dagent">
+                               <!-- Dynamically generate options for agents -->
+                               <option *ngFor="let agent of Agent" [value]="agent.nom">{{ agent.nom }} {{ agent.prenom }}</option>
+                              </select>
+                            <!-- <label for="nom" class="form-label"><i class='bx bxs-user fa-lg'></i> Nom_agent</label> -->
+                                  <!-- <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="modifPlannig.nom_dagent">  -->
+                               </div>
+                              <!-- <div class="col-md"> -->
+                                  <!-- <label for="prenom" class="form-label"><i class='bx bx-user fa-lg'></i> Prenom_agent</label> -->
+                                   <!-- <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="modifPlannig.date">   -->
+                             <!-- </div>  -->
+                             <div class="mt-2">
+                                 <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> date</label>
+                                <input type="date" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="modifPlannig.date">
+                           </div>
+                           <div class="row g-2">
+                            <div class="col-md">
+                              <select class="form-control" id="nom_dagent" name="nom_dagent" [(ngModel)]="modifPlannig.title">
+                                <!-- Dynamically generate options for agents -->
+                                <option value="" selected disabled>Select an destination</option>
+                                <option *ngFor="let destination of Destination" [value]="destination.title">{{destination.title }}</option>
+                            </select>
+                            </div>
+                            <div class="col-md">
+                                <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="modifPlannig.Tache">
+                            </div>
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" (click)="modif(modifPlannig.id)">Edit Plannig</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>

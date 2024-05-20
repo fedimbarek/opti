@@ -1,0 +1,1250 @@
+<!--<main class="main-content position-relative border-radius-lg ">
+  <app-navbar></app-navbar>
+  <div class="container-fluid py-4">
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0" style="text-align:justify;" style="background-color:rgb(235, 235, 235);">
+            
+              <div class="d-flex align-items-center" >
+                  <h6 class="mb-0 mr-auto">Authors table</h6>
+                  <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                    <div class="input-group">
+                      <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                      <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                    </div>
+                  </div>-->
+                  <!-- <button type="button" class="btn btn-linkedin btn-icon mt-2" style=" margin-left: 600px;" data-bs-toggle="modal" data-bs-target="#exampleModal"> -->
+                    <!-- <span class="btn-inner--icon"><i class="fa fa-plus "></i></span>&nbsp; -->
+                    <!-- <span class="btn-inner--text">Ajouter</span> -->
+                <!-- </button>        -->
+         <!--          </div>
+          </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Author</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Function</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Etat</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let agent of user | filter:searchText">
+                      <td >
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="{{agent.picture || 'https://images.pexels.com/photos/20230203/pexels-photo-20230203/free-photo-of-bois-sale-retro-vintage.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'}}" class="avatar avatar-sm me-3" alt="user1">                        </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{agent.nom}}</h6>
+                            <p class="text-xs text-secondary mb-0">{{agent.email}}</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td> 
+                        <p class="text-xs font-weight-bold mb-0">Manager</p>
+                        <p class="text-xs text-secondary mb-0">{{agent.role}}</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <div *ngIf="agent.etat_active === 'Active'; then Active; else Inactive"></div>
+                        <ng-template #Active>
+                          <span class="badge badge-sm bg-gradient-success">Online</span>
+                        </ng-template>
+                        <ng-template #Inactive>
+                          <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                        </ng-template>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                      </td>
+                      <td class="align-middle">
+                        <a class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="modifierid(agent)">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="user2">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Alexa Liras</h6>
+                            <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">Programator</p>
+                        <p class="text-xs text-secondary mb-0">Developer</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">11/01/19</span>
+                      </td>
+                      <td class="align-middle">
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3" alt="user3">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Laurent Perrier</h6>
+                            <p class="text-xs text-secondary mb-0">laurent@creative-tim.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">Executive</p>
+                        <p class="text-xs text-secondary mb-0">Projects</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">19/09/17</span>
+                      </td>
+                      <td class="align-middle">
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3" alt="user4">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Michael Levi</h6>
+                            <p class="text-xs text-secondary mb-0">michael@creative-tim.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">Programator</p>
+                        <p class="text-xs text-secondary mb-0">Developer</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="badge badge-sm bg-gradient-success">Online</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">24/12/08</span>
+                      </td>
+                      <td class="align-middle">
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user5">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Richard Gran</h6>
+                            <p class="text-xs text-secondary mb-0">richard@creative-tim.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">Manager</p>
+                        <p class="text-xs text-secondary mb-0">Executive</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">04/10/21</span>
+                      </td>
+                      <td class="align-middle">
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="../assets/img/team-4.jpg" class="avatar avatar-sm me-3" alt="user6">
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Miriam Eric</h6>
+                            <p class="text-xs text-secondary mb-0">miriam@creative-tim.com</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">Programtor</p>
+                        <p class="text-xs text-secondary mb-0">Developer</p>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">14/09/20</span>
+                      </td>
+                      <td class="align-middle">
+                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-header pb-0">
+              <h6>Projects table</h6>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center justify-content-center mb-0">
+                  <thead>
+                    <tr>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Project</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Budget</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Completion</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm">Spotify</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">$2,500</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">working</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                          <span class="me-2 text-xs font-weight-bold">60%</span>
+                          <div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="align-middle">
+                        <button class="btn btn-link text-secondary mb-0">
+                          <i class="fa fa-ellipsis-v text-xs"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm rounded-circle me-2" alt="invision">
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm">Invision</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">$5,000</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">done</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                          <span class="me-2 text-xs font-weight-bold">100%</span>
+                          <div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="align-middle">
+                        <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-ellipsis-v text-xs"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm rounded-circle me-2" alt="jira">
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm">Jira</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">$3,400</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">canceled</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                          <span class="me-2 text-xs font-weight-bold">30%</span>
+                          <div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="30" style="width: 30%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="align-middle">
+                        <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-ellipsis-v text-xs"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm rounded-circle me-2" alt="slack">
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm">Slack</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">$1,000</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">canceled</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                          <span class="me-2 text-xs font-weight-bold">0%</span>
+                          <div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 0%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="align-middle">
+                        <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-ellipsis-v text-xs"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-webdev.svg" class="avatar avatar-sm rounded-circle me-2" alt="webdev">
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm">Webdev</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">$14,000</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">working</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                          <span class="me-2 text-xs font-weight-bold">80%</span>
+                          <div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80" style="width: 80%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="align-middle">
+                        <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-ellipsis-v text-xs"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm rounded-circle me-2" alt="xd">
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm">Adobe XD</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-sm font-weight-bold mb-0">$2,300</p>
+                      </td>
+                      <td>
+                        <span class="text-xs font-weight-bold">done</span>
+                      </td>
+                      <td class="align-middle text-center">
+                        <div class="d-flex align-items-center justify-content-center">
+                          <span class="me-2 text-xs font-weight-bold">100%</span>
+                          <div>
+                            <div class="progress">
+                              <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="align-middle">
+                        <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                          <i class="fa fa-ellipsis-v text-xs"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer pt-3  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+              <div class="copyright text-center text-sm text-muted text-lg-start">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>,
+                made with <i class="fa fa-heart"></i> by
+                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                for a better web.
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Agent</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+  
+              <div class="mb-2">
+                <label for="title" class="form-label"><i class="ni ni-image"></i> Image Agent</label>-->
+                <!-- Add this input field for uploading images -->
+                <!-- <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control"  id="picture" name="picture"   [(ngModel)]="modifuser.picture"> -->
+                <!-- Rest of your HTML code --> 
+            <!--    </div>
+              <div class="row g-2">
+                <div class="col-md">
+                  
+                    <label for="nom" class="form-label"><i class='bx bxs-user fa-lg'></i> Nom_agent</label>
+                    <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="modifuser.nom">
+                </div>
+                <div class="col-md">
+                    <label for="prenom" class="form-label"><i class='bx bx-user fa-lg'></i> Prenom_agent</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="modifuser.prenom">
+                </div>
+              </div>
+                <div class="mt-2">
+                    <label for="cin" class="form-label"><i class='bx bxs-id-card fa-lg'></i> Cin</label>
+                    <input type="text" class="form-control" id="cin" name="cin" [(ngModel)]="modifuser.cin">
+                </div>
+                <div class="mt-2">
+                    <label for="email" class="form-label"><i class="ni ni-email-83"></i> Email</label>
+                    <input type="email" class="form-control" id="email" name="email" [(ngModel)]="modifuser.email">
+                </div>
+                <div class="mt-2">
+                    <label for="password" class="form-label"><i class="ni ni-lock-circle-open"></i> Password</label>
+                    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="modifuser.password">
+                </div>
+                <div class="mt-2">
+                    <label for="tel" class="form-label"><i class="ni ni-mobile-button"></i> Telephone</label>
+                    <input type="text" class="form-control" id="tel" name="telephone" [(ngModel)]="modifuser.telephone">
+                </div>-->
+                <!-- <div class="mb-3"> -->
+                    <!-- <label for="tel" class="form-label">Image</label> -->
+                    <!-- <input type="file" class="form-control" id="image" name="image" id="image" name="image" (change)="onFileSelected($event)" [(ngModel)]="modifuser.picture"> -->
+                <!-- </div> -->
+               
+             <!-- <div class="mt-2">
+                    <label for="adresse" class="form-label"><i class="ni ni-building"></i> Adresse</label>
+                    <input type="text" class="form-control" id="adresse" name="adresse" [(ngModel)]="modifuser.adresse">
+                </div>
+                <div class="mt-2">
+                    <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> Moyen_Transport</label>
+                    <input type="text" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="modifuser.moyen_transport">
+                </div>
+                <div class="form-check form-switch mt-2">
+                    <input class="form-check-input" type="checkbox" id="etat_active" name="etat_active" value="ok" checked="" [(ngModel)]="modifuser.etat_active">
+                    <label class="form-check-label" for="etat_active">{{ modifuser.etat_active ? 'Active' : 'Inactive' }}</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn bg-gradient-primary btn-tooltip">Save changes</button>
+            </div>
+        </div>
+    </div>
+  </div>-->
+<!--  <main class="main-content position-relative border-radius-lg ">
+    <app-navbar></app-navbar>
+    <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-4">
+              <div class="card-header pb-0" style="text-align:justify;" style="background-color:rgb(235, 235, 235);">
+              
+                <div class="d-flex align-items-center" >
+                    <h6 class="mb-0 mr-auto">Authors table</h6>
+                    <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+                      <div class="input-group">
+                        <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn-linkedin btn-icon mt-2" style=" margin-left: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                      <span class="btn-inner--icon"><i class="fa fa-plus "></i></span>&nbsp;
+                      <span class="btn-inner--text">Ajouter</span>
+                  </button>       
+                     </div>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+              <div class="table-responsive p-0">
+                <table class="table align-items-center mb-0">
+                  <thead>
+                    <tr>
+                    
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Agent</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Num d'identité</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Contact</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Adresse</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Etat</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Moyen_Transport</th>
+                      <th class="text-secondary opacity-7"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let agent of user | filter:searchText">
+                      <td >
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            <img src="{{agent.picture || '../assets/img/team-2.jpg'}}" class="avatar avatar-sm me-3" alt="user1">                        </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{agent.nom}}</h6>
+                            <p class="text-xs text-secondary mb-0">{{agent.prenom}}</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">{{agent.cin}}</p>
+                      </td>
+  
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">{{agent.telephone}}</p>
+                        <p class="text-xs text-secondary mb-0">{{agent.email}}</p>
+                      </td>
+  
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">{{agent.adresse}}</p>
+                      </td>
+  
+                     
+                      <td class="align-middle text-center text-sm">
+                        <div *ngIf="agent.etat_active === 'Active'; then Active; else Inactive"></div>
+                        <ng-template #Active>
+                          <span class="badge badge-sm bg-gradient-success">Online</span>
+                        </ng-template>
+                        <ng-template #Inactive>
+                          <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                        </ng-template>
+                      </td>
+                     
+                     
+                     
+                     
+                      <td class="align-middle text-center">
+                        <span class="text-secondary text-xs font-weight-bold">{{agent.moyen_transport}}</span>
+                      </td>
+                      <td class="align-middle">
+                        <a class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="modifierid(agent)">
+                          Edit
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-4">
+              <div class="card-header pb-0">
+                <h6>Projects table</h6>
+              </div>
+              <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                  <table class="table align-items-center justify-content-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Project</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Budget</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Status</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Completion</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2">
+                            <div>
+                              <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Spotify</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-sm font-weight-bold mb-0">$2,500</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">working</span>
+                        </td>
+                        <td class="align-middle text-center">
+                          <div class="d-flex align-items-center justify-content-center">
+                            <span class="me-2 text-xs font-weight-bold">60%</span>
+                            <div>
+                              <div class="progress">
+                                <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle">
+                          <button class="btn btn-link text-secondary mb-0">
+                            <i class="fa fa-ellipsis-v text-xs"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2">
+                            <div>
+                              <img src="../assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm rounded-circle me-2" alt="invision">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Invision</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-sm font-weight-bold mb-0">$5,000</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">done</span>
+                        </td>
+                        <td class="align-middle text-center">
+                          <div class="d-flex align-items-center justify-content-center">
+                            <span class="me-2 text-xs font-weight-bold">100%</span>
+                            <div>
+                              <div class="progress">
+                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle">
+                          <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v text-xs"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2">
+                            <div>
+                              <img src="../assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm rounded-circle me-2" alt="jira">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Jira</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-sm font-weight-bold mb-0">$3,400</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">canceled</span>
+                        </td>
+                        <td class="align-middle text-center">
+                          <div class="d-flex align-items-center justify-content-center">
+                            <span class="me-2 text-xs font-weight-bold">30%</span>
+                            <div>
+                              <div class="progress">
+                                <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="30" style="width: 30%;"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle">
+                          <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v text-xs"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2">
+                            <div>
+                              <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm rounded-circle me-2" alt="slack">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Slack</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-sm font-weight-bold mb-0">$1,000</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">canceled</span>
+                        </td>
+                        <td class="align-middle text-center">
+                          <div class="d-flex align-items-center justify-content-center">
+                            <span class="me-2 text-xs font-weight-bold">0%</span>
+                            <div>
+                              <div class="progress">
+                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 0%;"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle">
+                          <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v text-xs"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2">
+                            <div>
+                              <img src="../assets/img/small-logos/logo-webdev.svg" class="avatar avatar-sm rounded-circle me-2" alt="webdev">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Webdev</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-sm font-weight-bold mb-0">$14,000</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">working</span>
+                        </td>
+                        <td class="align-middle text-center">
+                          <div class="d-flex align-items-center justify-content-center">
+                            <span class="me-2 text-xs font-weight-bold">80%</span>
+                            <div>
+                              <div class="progress">
+                                <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80" style="width: 80%;"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle">
+                          <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v text-xs"></i>
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2">
+                            <div>
+                              <img src="../assets/img/small-logos/logo-xd.svg" class="avatar avatar-sm rounded-circle me-2" alt="xd">
+                            </div>
+                            <div class="my-auto">
+                              <h6 class="mb-0 text-sm">Adobe XD</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <p class="text-sm font-weight-bold mb-0">$2,300</p>
+                        </td>
+                        <td>
+                          <span class="text-xs font-weight-bold">done</span>
+                        </td>
+                        <td class="align-middle text-center">
+                          <div class="d-flex align-items-center justify-content-center">
+                            <span class="me-2 text-xs font-weight-bold">100%</span>
+                            <div>
+                              <div class="progress">
+                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="align-middle">
+                          <button class="btn btn-link text-secondary mb-0" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v text-xs"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer pt-3  ">
+          <div class="container-fluid">
+            <div class="row align-items-center justify-content-lg-between">
+              <div class="col-lg-6 mb-lg-0 mb-4">
+                <div class="copyright text-center text-sm text-muted text-lg-start">
+                  © <script>
+                    document.write(new Date().getFullYear())
+                  </script>,
+                  made with <i class="fa fa-heart"></i> by
+                  <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                  for a better web.
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                  <li class="nav-item">
+                    <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </main>
+  
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Agent</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+    
+                <div class="mb-2">
+                  <label for="title" class="form-label"><i class="ni ni-image"></i> Image Agent</label>-->
+                  <!-- Add this input field for uploading images -->
+             <!--     <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control"  id="picture" name="picture"   [(ngModel)]="modifuser.picture">
+             -->   <!-- Rest of your HTML code --> 
+              <!--    </div>
+                <div class="row g-2">
+                  <div class="col-md">
+                    
+                      <label for="nom" class="form-label"><i class='bx bxs-user fa-lg'></i> Nom_agent</label>
+                      <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="modifuser.nom">
+                  </div>
+                  <div class="col-md">
+                      <label for="prenom" class="form-label"><i class='bx bx-user fa-lg'></i> Prenom_agent</label>
+                      <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="modifuser.prenom">
+                  </div>
+                </div>
+                  <div class="mt-2">
+                      <label for="cin" class="form-label"><i class='bx bxs-id-card fa-lg'></i> Cin</label>
+                      <input type="text" class="form-control" id="cin" name="cin" [(ngModel)]="modifuser.cin">
+                  </div>
+                  <div class="mt-2">
+                      <label for="email" class="form-label"><i class="ni ni-email-83"></i> Email</label>
+                      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="modifuser.email">
+                  </div>
+                  <div class="mt-2">
+                      <label for="password" class="form-label"><i class="ni ni-lock-circle-open"></i> Password</label>
+                      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="modifuser.password">
+                  </div>
+                  <div class="mt-2">
+                      <label for="tel" class="form-label"><i class="ni ni-mobile-button"></i> Telephone</label>
+                      <input type="text" class="form-control" id="tel" name="telephone" [(ngModel)]="modifuser.telephone">
+                  </div>-->
+                  <!-- <div class="mb-3"> -->
+                      <!-- <label for="tel" class="form-label">Image</label> -->
+                      <!-- <input type="file" class="form-control" id="image" name="image" id="image" name="image" (change)="onFileSelected($event)" [(ngModel)]="modifuser.picture"> -->
+                  <!-- </div> -->
+                 
+                 <!-- <div class="mt-2">
+                      <label for="adresse" class="form-label"><i class="ni ni-building"></i> Adresse</label>
+                      <input type="text" class="form-control" id="adresse" name="adresse" [(ngModel)]="modifuser.adresse">
+                  </div>
+                  <div class="mt-2">
+                      <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> Moyen_Transport</label>
+                      <input type="text" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="modifuser.moyen_transport">
+                  </div>
+                  <div class="form-check form-switch mt-2">
+                      <input class="form-check-input" type="checkbox" id="etat_active" name="etat_active" value="ok" checked="" [(ngModel)]="modifuser.etat_active">
+                      <label class="form-check-label" for="etat_active">{{ modifuser.etat_active ? 'Active' : 'Inactive' }}</label>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn bg-gradient-primary btn-tooltip" data-bs-dismiss="modal">Save changes</button>
+              </div>
+          </div>
+      </div>
+    </div>-->
+
+    <main class="main-content position-relative border-radius-lg ">
+      <app-navbar></app-navbar>
+      <div class="container-fluid py-4">
+          <div class="row">
+            <div class="col-12">
+              <div class="card mb-4">
+                <div class="card-header pb-0" style="text-align:justify;" style="background-color:rgb(235, 235, 235);">
+                
+                  <div class="d-flex align-items-center" >
+                      <h6 class="mb-0 mr-auto">Table Agent</h6>
+                      <div class="ms-md-auto pe-md-3 d-flex align-items-center" style="margin-right: 570px;">
+                        <div class="input-group">
+                          <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                          <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                        </div>
+                      </div>
+                      <!-- <button type="button" class="btn btn-linkedin btn-icon mt-2" style=" margin-left: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal"> -->
+                        <!-- <span class="btn-inner--icon"><i class="fa fa-plus "></i></span>&nbsp; -->
+                        <!-- <span class="btn-inner--text">Ajouter</span> -->
+                    <!-- </button>        -->
+                       </div>
+              </div>
+                <div class="card-body px-0 pt-0 pb-2">
+                  <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0 y">
+                      <thead>
+                        <tr>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Agent</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Num d'identité</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Contact</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Adresse</th>
+                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Etat</th>
+                          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Moyen_Transport</th>
+                          <th class="text-secondary opacity-7"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let agent of user | filter:searchText">
+                          <td >
+                            <div class="d-flex px-2 py-1">
+                              <div>
+                                <img src="{{agent.picture || '../assets/img/team-2.jpg'}}" class="avatar avatar-sm me-3" alt="user1">                        </div>
+                              <div class="d-flex flex-column justify-content-center">
+                                <h6 class="mb-0 text-sm">{{agent.nom}}</h6>
+                                <p class="text-xs text-secondary mb-0">{{agent.prenom}}</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td> 
+                            <p class="text-xs text-secondary mb-0">{{agent.cin}}</p>
+                          </td>
+    
+                          <td>
+                            <p class="text-xs font-weight-bold mb-0">{{agent.telephone}}</p>
+                            <p class="text-xs text-secondary mb-0">{{agent.email}}</p>
+                          </td>
+    
+                          <td>
+                            <p class="text-xs font-weight-bold mb-0">{{agent.adresse}}</p>
+                          </td>
+    
+    
+                          <td class="align-middle text-center text-sm">
+                            <div *ngIf="agent.etat_active === 'Active'; then Active; else Inactive"></div>
+                            <ng-template #Active>
+                              <span class="badge badge-sm bg-gradient-success" >Online</span>
+                            </ng-template>
+                            <ng-template #Inactive>
+                              <span class="badge badge-sm bg-gradient-secondary">Offline</span>
+                            </ng-template>
+                          </td>
+    
+                          <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-bold">{{agent.moyen_transport}}</span>
+                          </td>
+                        
+                          <td class="align-middle">
+                            <a class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#exampleModal1" (click)="modifierid(agent)">
+                              Edit
+                            </a>
+                          </td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="card ">
+                <div class="card-header pb-0"  style="background-color:#8F95E6;">
+                
+                  <div class="d-flex align-items-center mb-2" >
+                      <h6 class="mb-0 mr-auto text-white">Table Permission</h6>
+                      <div class="ms-md-auto pe-md-3 d-flex align-items-center" style="margin-right: 570px;">
+                        <div class="input-group">
+                          <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                          <input type="text" class="form-control"  name="search" [(ngModel)]="searchText1" placeholder="Type here...">
+                        </div>
+                      </div>
+                 
+                       
+              </div></div>
+                
+                <div class="card-body px-0 pt-0 pb-2">
+                  <div class="table-responsive p-0">
+                    <table class="table align-items-center justify-content-center mb-0">
+                      <thead>
+                        <tr>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date/Heure Debut</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date/Heure Fin</th>
+                          <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Raison_Permission</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let agent of permission | filter:searchText1">
+                          <td>
+                            <div class="d-flex px-2">
+                              <div>
+                                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                              </div>
+                              <div class="d-flex px-2 py-1">
+                                <h6 class="mb-0 text-sm">{{agent.Nom}}</h6>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <p class="text-xs font-weight-bold mb-0">{{agent.DateDebut}}</p>
+                            <p class="text-xs text-secondary mb-0">&nbsp;{{agent.HeureDebut}} min</p>
+                          </td>
+                          <td>
+                            <p class="text-xs font-weight-bold mb-0">{{agent.DateFin}}</p>
+                            <p class="text-xs text-secondary mb-0">&nbsp;{{agent.HeureFin}} min</p>                     
+                           </td>
+                          <td class="align-middle text-center">
+                            <div class="d-flex align-items-center justify-content-center">
+                              <span class="me-2 text-xs font-weight-bold">{{agent.Raison}}</span>
+                            </div>
+                          </td>
+                          <td class="align-middle">
+                            <button class="btn btn-link text-secondary mb-0" data-bs-toggle="modal" data-bs-target="#PermissionModal">
+                              <i class="fa fa-ellipsis-v text-xs"></i>
+                            </button>
+                          </td>
+                        </tr>
+                       
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="footer pt-3  ">
+            <div class="container-fluid">
+              <div class="row align-items-center justify-content-lg-between">
+                <div class="col-lg-6 mb-lg-0 mb-4">
+                  <div class="copyright text-center text-sm text-muted text-lg-start">
+                    © <script>
+                      document.write(new Date().getFullYear())
+                    </script>,
+                    made with <i class="fa fa-heart"></i> by
+                    <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
+                    for a better web.
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+                    <li class="nav-item">
+                      <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </main>
+    
+     <!---- <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:rgb(235, 235, 235);">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Agent</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+      
+                  <div class="mb-2">
+                    <label for="title" class="form-label"><i class="ni ni-image"></i> Image Agent</label>
+                  --> <!-- Add this input field for uploading images -->
+                 <!--   <input type="file" (change)="onFileSelected($event)" accept="image/*" class="form-control"  id="picture" name="picture"   [(ngModel)]="modifuser.picture">
+                --->    <!-- Rest of your HTML code --> 
+                 <!--   </div>
+                  <div class="row g-2">
+                    <div class="col-md">
+                      
+                        <label for="nom" class="form-label"><i class='bx bxs-user fa-lg'></i> Nom_agent</label>
+                        <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="modifuser.nom">
+                    </div>
+                    <div class="col-md">
+                        <label for="prenom" class="form-label"><i class='bx bx-user fa-lg'></i> Prenom_agent</label>
+                        <input type="text" class="form-control" id="prenom" name="prenom" [(ngModel)]="modifuser.prenom">
+                    </div>
+                  </div>
+                    <div class="mt-2">
+                        <label for="cin" class="form-label"><i class='bx bxs-id-card fa-lg'></i> Cin</label>
+                        <input type="text" class="form-control" id="cin" name="cin" [(ngModel)]="modifuser.cin">
+                    </div>
+                    <div class="mt-2">
+                        <label for="email" class="form-label"><i class="ni ni-email-83"></i> Email</label>
+                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="modifuser.email">
+                    </div>
+                    <div class="mt-2">
+                        <label for="password" class="form-label"><i class="ni ni-lock-circle-open"></i> Password</label>
+                        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="modifuser.password">
+                    </div>
+                    <div class="mt-2">
+                        <label for="tel" class="form-label"><i class="ni ni-mobile-button"></i> Telephone</label>
+                        <input type="text" class="form-control" id="tel" name="telephone" [(ngModel)]="modifuser.telephone">
+                    </div>-->
+                    <!-- <div class="mb-3"> -->
+                        <!-- <label for="tel" class="form-label">Image</label> -->
+                        <!-- <input type="file" class="form-control" id="image" name="image" id="image" name="image" (change)="onFileSelected($event)" [(ngModel)]="modifuser.picture"> -->
+                    <!-- </div> -->
+                   
+                 <!--  <div class="mt-2">
+                        <label for="adresse" class="form-label"><i class="ni ni-building"></i> Adresse</label>
+                        <input type="text" class="form-control" id="adresse" name="adresse" [(ngModel)]="modifuser.adresse">
+                    </div>
+                    <div class="mt-2">
+                        <label for="transport" class="form-label"><i class="ni ni-bus-front-12"></i> Moyen_Transport</label>
+                        <input type="text" class="form-control" id="transport" name="moyen_transport" [(ngModel)]="modifuser.moyen_transport">
+                    </div>
+                    <div class="form-check form-switch mt-2">
+                        <input class="form-check-input" type="checkbox" id="etat_active" name="etat_active" value="ok" checked="" [(ngModel)]="modifuser.etat_active ">
+                        <label class="form-check-label" for="etat_active">{{ modifuser.etat_active ? 'Active' : 'Inactive' }}</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn bg-gradient-primary btn-tooltip" data-bs-dismiss="modal" (click)="modif(modifuser.id)">Save changes</button>
+                </div>
+            </div>
+        </div>
+      </div>-->
+    
+    
+      <div class="modal fade" id="PermissionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#8F95E6;">
+                    <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Decision Permission</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+      
+                
+                  <div class="row g-2">
+                    <div class="mt-2">
+                      <label for="cin" class="form-label"><i class='ni ni-ui-04'></i> Decision</label>
+                      <input type="text" class="form-control" id="cin" name="cin" [(ngModel)]="modifuser.cin">
+                  </div>
+                  </div>
+                    <div class="mt-2">
+                        <label for="cin" class="form-label"><i class="ni ni-single-copy-04"></i> Explication</label>
+                        <textarea class="form-control" id="cin" name="cin" cols="40" rows="4" [(ngModel)]="modifuser.cin"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn bg-gradient-secondary btn-tooltip" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn bg-gradient-primary btn-tooltip" data-bs-dismiss="modal" >Save changes</button>
+                </div>
+            </div>
+        </div>
+      </div> 

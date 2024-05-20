@@ -1,0 +1,9 @@
+.main-content{
+    margin-left: 300px;
+}
+.y{
+    display: block;
+    overflow: auto;
+    height: calc(85vh - 300px);
+    /* width: 1000px; */
+}

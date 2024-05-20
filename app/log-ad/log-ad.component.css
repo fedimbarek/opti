@@ -1,0 +1,51 @@
+section {
+    background: url('https://www.southindus.com/wp-content/uploads/2023/07/system-administrator-appreciation-day-scaled.jpeg'); /* Remplacez 'background.jpg' par le chemin réel */
+    /* background-size: cover; */
+    height: 100vh;
+    display: flex;
+}
+
+.login {
+    width: 400px;
+    padding: 60px;
+    background: rgba(64, 64, 64, 0.15);/* Fond sombre*/
+    color: #fff; /*Texte blanc*/
+    margin: 100px auto;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 10%;
+    border: #fff solid 1px;
+    backdrop-filter: blur(100px);
+}
+/*form{
+    margin-top: 100px;
+}*/
+.login h2 {
+    text-align: center;
+    color: #ffffff; /* Accent bleu */
+}
+
+.login input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 60px;
+    box-sizing: border-box;
+}
+
+.login button {
+    width: 50%;
+    padding: 10px;
+    background: #21a4f1; /* Bouton bleu */
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 100px;
+}
+
+.login a {
+    color: #1E90FF; /* Lien bleu */
+    text-decoration: none;
+}
+
+.login p {
+    text-align: center;
+}

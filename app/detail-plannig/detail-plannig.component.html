@@ -1,0 +1,37 @@
+
+<!--<div class="container">
+<div *ngIf="agent" class="x">
+    <h2>Planning Detail</h2>
+    <div>
+      <strong>ID:</strong> {{ agent._id }} <br>
+      <strong>Date:</strong> {{ agent.date}} <br>
+      <strong>Agent Name:</strong> {{ agent.nom_dagent?.nom }}
+    </div>
+  </div>
+</div>-->
+<!-- <table class="table"> -->
+  <!-- <thead> -->
+    <!-- <tr> -->
+      <!-- <th scope="col">#</th> -->
+      <!-- <th scope="col">First</th> -->
+      <!-- <th scope="col">Last</th> -->
+      <!-- <th scope="col">Handle</th> -->
+    <!-- </tr> -->
+  <!-- </thead> -->
+  <!-- <tbody> -->
+    <!-- <tr *ngIf="agent"> -->
+      <!-- <th scope="row">{{agent._id}}</th> -->
+      <!-- <td>{{agent.date}}</td> -->
+      <!-- <td>{{agent.nom_dagent?.nom}}</td> -->
+      <!-- <td>@mdo</td> -->
+    <!-- </tr>      -->
+  <!-- </tbody> -->
+<!-- </table> -->
+<!--  -->
+
+    <div *ngIf="agent">
+      <h1>{{agent.nom_dagent?.nom}}</h1>
+      <h2>{{ formatDate(agent.date) }}</h2>
+      <h2>{{agent.title?.title}}</h2>
+    </div>     
+

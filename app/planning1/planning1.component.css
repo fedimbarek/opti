@@ -1,0 +1,23 @@
+ejs-schedule{
+    margin-left: 300px;
+    margin-top: 100px;
+}
+
+.main-content{
+    margin-left: 300px;
+}
+
+
+.separator {
+    border-top: 1px solid #ccc; /* Add a border at the top */
+    padding: 0; /* Remove any padding */
+    margin: 5px 0; /* Adjust margin as needed */
+    pointer-events: none; /* Disable interaction with this option */
+}
+
+.icon {
+    margin-left: -3px;
+    color: white;
+
+ 
+}

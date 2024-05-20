@@ -1,0 +1,110 @@
+<main class="main-content position-relative border-radius-lg ">
+    <app-navbar></app-navbar>
+    <div class="container-fluid py-4">
+        <div class="row">
+          <div class="col-12">
+            <div class="card mb-4">
+              <div class="card-header pb-0" style="background-color:rgb(235, 235, 235);">
+                <div class="d-flex align-items-center" >
+                  <h6 class="mb-0 mr-auto">Authors table</h6>
+                  <div class="ms-md-auto pe-md-3 d-flex align-items-center" style="margin-right: 570px;">
+                    <div class="input-group">
+                      <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                      <input type="text" class="form-control"  name="search" [(ngModel)]="searchText" placeholder="Type here...">
+                    </div>
+                  </div>
+                  <!-- <button type="button" class="btn btn-linkedin btn-icon mt-2" style=" margin-left: 500px;" data-bs-toggle="modal" data-bs-target="#exampleModal4"> -->
+                    <!-- <span class="btn-inner--icon"><i class="fa fa-plus "></i></span>&nbsp; -->
+                    <!-- <span class="btn-inner--text">Ajouter</span> -->
+                <!-- </button> -->
+                   </div>
+  
+  
+  
+              </div>
+              <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive p-0">
+                  <table class="table align-items-center mb-0">
+                    <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nom-Agent</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Destination</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tache</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width: 20px;"></th>
+                        <div class="ms-md-auto pe-md-3 d-flex align-items-center">
+  
+                        </div>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let agent of user | filter:searchText">
+                        <td >
+                          <div class="d-flex px-2 py-1">
+                            <div>
+                              <img src="{{agent.picture || '../assets/img/team-2.jpg'}}" class="avatar avatar-sm me-3" alt="user1">                        </div>
+                            <div class="d-flex flex-column justify-content-center">
+                              <h6 class="mb-0 text-sm">{{ agent.nom_dagent?.nom }}</h6>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+  
+  
+                          <p class="text-xs text-secondary mb-0">{{ formatDate(agent.date) }}</p>
+                        </td>
+                        <!-- <td class="align-middle text-center text-sm"> -->
+                          <!-- <div *ngIf="agent.etat_active === 'Active'; then Active; else Inactive"></div> -->
+                          <!-- <ng-template #Active> -->
+                            <!-- <span class="badge badge-sm bg-gradient-success">Online</span> -->
+                          <!-- </ng-template> -->
+                          <!-- <ng-template #Inactive> -->
+                            <!-- <span class="badge badge-sm bg-gradient-secondary">Offline</span> -->
+                          <!-- </ng-template> -->
+                        <!-- </td> -->
+                        <!-- <td class="align-middle text-center"> -->
+                          <!-- <span class="text-secondary text-xs font-weight-bold">23/04/18</span> -->
+                          <!--  -->
+                        <!-- </td> -->
+                        <!-- <td><a [routerLink]="['/planning/'+agent._id]">View Details</a></td> -->
+  
+                        <td>
+  
+                          <p class="text-xs text-secondary mb-0" style="margin-left: 20px;">{{agent.title?.title}} {{agent.title?.description}}</p>
+  
+                        </td>
+  
+                        <td>
+                          <p class="text-xs text-secondary mb-0" style="margin-left: 20px;">{{agent.Tache}}</p>
+                        </td>
+  
+  
+                        <td class="align-middle">
+                          <button class="btn btn-info btn-sm text-xs" style="position: relative; margin: 10px;" data-original-title="View details" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="showDetail(agent)">
+                            <i class="fas fa-info-circle"></i> Details
+                          </button>
+  
+                          <!-- <button class="btn btn-warning btn-sm font-weight-bold" style="position: relative; margin: 10px;" data-original-title="Edit user" data-bs-toggle="modal" data-bs-target="#exampleModal9" (click)="modifierid(agent)"> -->
+                            <!-- <i class="fas fa-edit"></i> Edit -->
+                          <!-- </button> -->
+                        </td>
+                      </tr>
+                    </tbody></table></div></div></div></div></div></div></main>
+  
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <app-detail-plannig [agent]="selectedAgent"></app-detail-plannig>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
